@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="../assets/CSS/style.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <!-- Hide header after "start quiz btn is clicked" -->
+      <header>
+        <h1> Web Quiz </h1>
+        <button id="start" class="h1Btn"> Start Quiz </button>
+      </header>
+
+      <!-- Show main after "start quiz btn is clicked" -->
+      <main>
+        <div class="card">
+          <div class="card-top">
+            <h2 id="highscore">Highscore: </h2>
+            <h2 id="timer">Timer: </h2>
+          </div>
+
+          <div class="card-header">
+            <h2 id="questions">Questions </h2>
+          </div>
+          <div class="card-body">
+              <!-- Buttons for answers -->
+              <button id="ans1" class="btn">Answer 1</button>
+              <button id="ans2" class="btn">Answer 2</button>
+              <button id="ans3" class="btn">Answer 3</button>
+              <button id="ans4" class="btn">Answer 4</button>
+          </div>
+
+          <!-- Show footer after "answer btn is clicked" -->
+          <div class="card-footer">
+            <!-- Alert for Correct or Incorrect answers  -->
+            <h3 class="compResp">Correct/Incorrect </h3>
+            <!-- Text area for scores on answers  -->
+            <!-- <textarea
+            readonly
+            id="scores"
+            placeholder="Your current score: "
+          ></textarea> -->
+          </div>
+
+        </div>
+      </main>
+
+    </div>
+    <script src="../assets/JS/script.js"></script>
+  </body>
+</html>
