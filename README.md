@@ -25,7 +25,7 @@ Debug the code IF needed.
 
 
 //******* ORIGINAL READ ME BELOW *******//
-# 03 JavaScript: Password Generator
+# 04 
 
 Web APIs Challenge: Code Quiz
 As you proceed in your journey to becoming a full-stack web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges.
