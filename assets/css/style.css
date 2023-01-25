@@ -23,6 +23,7 @@ body {
   padding-right: 20px;
 }
 
+/* QUIZ INTRO  */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +31,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* QUIZ QUESTIONS  */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
