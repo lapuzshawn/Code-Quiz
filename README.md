@@ -22,6 +22,7 @@ Link CSS so that styling will apply according to the Acceptance Criteria
 Debug the code IF needed. 
 
 
+![plot](./assets/images/web-quiz-ss.png)  
 
 
 //******* ORIGINAL READ ME BELOW *******//
