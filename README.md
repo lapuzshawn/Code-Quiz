@@ -18,7 +18,7 @@ Store 'score' value into 'currentScore' document.querySelector("#currentScore") 
 // Phase 6 -  
 Link CSS so that styling will apply according to the Acceptance Criteria 
 
-// Phase 7 - PENDING 
+// Phase 7 - PENDING ... 
 Debug the code IF needed. 
 
 
