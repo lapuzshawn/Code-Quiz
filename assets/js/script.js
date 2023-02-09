@@ -1,121 +1,154 @@
 // Variables needed for Web Quiz Challenge 
+var questionIndex = 0;
+var time = 15;
+var timerCountId;
 
-var question = " ";
 var answerPrompt = " ";
 var highscoreText = " ";
 var highscoreCount;
-var indexQ;
-var timer;
-var timerCount;
 var userAnswer;
 
-// Assignment code here // Get references to the #start element
-var startBtn = document.querySelector("#start");
-var timerElement = document.querySelector("#timer-count");
-var compResp = document.querySelector("#compResp");
-var question = document.querySelector("#questions");
-// var aBtn = document.querySelector("#btn");
-var a1Btn = document.querySelector("#ans1");
-var a2Btn = document.querySelector("#ans2");
-var a3Btn = document.querySelector("#ans3");
-var a4Btn = document.querySelector("#ans4");
+// variables to reference button elements in DOM 
+var startBtn = document.getElementById("start");
+var submitBtn = document.getElementById("submit");
 
+// variables to reference text elements in DOM 
+var timerEl = document.getElementById("timer-count");
+var choicesArrayEl = document.getElementById("choicesArray");
+var questionsEl = document.getElementById("questions");
+var compRespEl = document.getElementById("compResp");
+var initialsEl = document.getElementById("initials");
 
-
-
-// Add event listener to generate button
-startBtn.addEventListener("click", startGame);
+// ****** QUIZ FUNCTIONS  ****** // 
 
 function startGame() {
   startBtn.disabled = true; 
-  indexQ = 0;
-  writeQuestions();
-  timerCount = 15;
   // startTimer()
+  timerCountId = 15;
+
+  writeQuestions();
   console.log("start");
 };
 
 
-function startTimer() {
-  // Sets timer
-  timer = setInterval(function() {
-    timerCount--;
-    timerElement.textContent = timerCount;
-    // if (timerCount >= 0) {
-    //   // Tests if win condition is met
-    //   }
-    // // Tests if time has run out
-    // else (timerCount === 0) {
-    //   // Clears interval
-    //   clearInterval(timerElement);
-    //   loseGame();
-    // }
-  }, 1000);
-}
+// function startTimer() {
+//   // Sets timer
+//   time = setInterval(function() {
+//     timerCountId--;
+//     timerEl.textContent = timerCountId;
+//     // if (timerCount >= 0) {
+//       //   // Tests if win condition is met
+//     //   }
+//     // // Tests if time has run out
+//     // else (timerCount === 0) {
+//       //   // Clears interval
+//     //   clearInterval(timerElement);
+//     //   loseGame();
+//     // }
+//   }, 1000);
+// }
+
+
+function writeQuestions() {
+  var currentQuestion = questionsArray[questionIndex];
+
+  var questionTitleEl = document.getElementById('questions');
+  questionTitleEl.textContent = currentQuestion.question;
+
+  console.log(questionTitleEl);
+  
+  var choices = currentQuestion.choicesArray[0];
+  var choiceNode = document.createElement('button');
+    choiceNode.setAttribute('class', 'choice');
+    choiceNode.setAttribute('value', choices);
+    choiceNode.textContent =  '1' + '. ' + choices;
+
+  console.log(choices);
+  console.log(choiceNode);
+
+  
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ****** EVENT LISTENERS ****** // 
+
+// Add event listener to generate button
+startBtn.addEventListener("click", startGame);
 
 // The winGame function is called when the win condition is met
 function winGame() {
   highscoreText.textContent = "You win! Here's your score: ";
-  startButton.disabled = false;
+  startBtn.disabled = false;
 }
 
 // The loseGame function is called when timer reaches 0
 function loseGame() {
-
+  
 }
 
 // The compareAnswer function is called when userAnswer has value
 function compareAnswer() {
-
+  
 }
 
 
-// Write questions to the #questions input
-function writeQuestions() {
+// // Write questions to the #questions input
+// function writeQuestions() {
+  
+//   //Stores newQuestion value to be displayed in HTML via JS 
+//   questionIndex.innerText = questionsArray[questionIndex].question;
+//   a1Btn.innerText = questionsArray[questionIndex].ans1;
+//   a2Btn.innerText = questionsArray[questionIndex].ans2;
+//   a3Btn.innerText = questionsArray[questionIndex].ans3;
+//   a4Btn.innerText = questionsArray[questionIndex].ans4;
 
-  //Stores newQuestion value to be displayed in HTML via JS 
-  question.innerText = questionsArray[indexQ].question;
-  a1Btn.innerText = questionsArray[indexQ].ans1;
-  a2Btn.innerText = questionsArray[indexQ].ans2;
-  a3Btn.innerText = questionsArray[indexQ].ans3;
-  a4Btn.innerText = questionsArray[indexQ].ans4;
-
-};
-
-
-// Add event listener to answer button and check for correct answer
-a1Btn.addEventListener("click", printAnswer);
-a2Btn.addEventListener("click", printAnswer);
-a3Btn.addEventListener("click", printAnswerTest);
-a4Btn.addEventListener("click", printAnswerTest);
+// };
 
 
-function printAnswer (event) {
-  indexQ++;
-
-  var selectedAnswer = document.getElementById(event.target);
-  // var userAnswer = selected.dataset;
-  // console.log(userAnswer);
-  // function compareAnswer();
-
-  writeQuestions();
-}
-
-function printAnswerTest (event) {
-  indexQ++;
-
-  // var selected = event.target;
-  // console.log(selected);
-  // var userAnswer = selected.dataset;
-  // console.log(userAnswer);
-  // var userAnswer = selected.dataset;
-  // console.log(userAnswer);
-  // function compareAnswer();
-
-  writeQuestions();
-}
+// // Add event listener to answer button and check for correct answer
+// a1Btn.addEventListener("click", printAnswer);
+// a2Btn.addEventListener("click", printAnswer);
+// a3Btn.addEventListener("click", printAnswerTest);
+// a4Btn.addEventListener("click", printAnswerTest);
 
 
+// function printAnswer (event) {
+//   questionIndex++;
+
+//   var selectedAnswer = document.getElementById(event.target);
+//   // var userAnswer = selected.dataset;
+//   // console.log(userAnswer);
+//   // function compareAnswer();
+
+//   writeQuestions();
+// }
+
+// function printAnswerTest (event) {
+//   questionIndex++;
+
+//   // var selected = event.target;
+//   // console.log(selected);
+//   // var userAnswer = selected.dataset;
+//   // console.log(userAnswer);
+//   // var userAnswer = selected.dataset;
+//   // console.log(userAnswer);
+//   // function compareAnswer();
+
+//   writeQuestions();
+// }
 
 
 
@@ -123,31 +156,7 @@ function printAnswerTest (event) {
 
 
 
-//list of Questions
-var questionsArray = [
-  { question: 'what is 1+1?',
-    ans1: "1",
-    ans2: "2",
-    ans3: "3",
-    ans4: "4",
-    answer: 2, 
-  },
-  { question: 'what is 2+1?',
-  ans1: "2",
-  ans2: "x",
-  ans3: "3",
-  ans4: "4",
-  answer: 3, 
-  },
-  { question: 'what is 3+1?',
-  ans1: "3",
-  ans2: "2",
-  ans3: "4",
-  ans4: "x",
-  answer: 3, 
-  }
 
-]
 
 
 // ***** WRITE THIS LATER ***** //
